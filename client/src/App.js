@@ -3,7 +3,20 @@ import io from 'socket.io-client' ;
 import {useState} from 'react';
 import Chat from './Chat';
 
-const socket=io.connect("https://chat-app-server-t0j7.onrender.com");
+const socket=io.connect("http://localhost:3001");
+
+
+socket.on("connect", () => {
+    console.log("connected to server");
+});
+
+socket.on("disconnect", () => {
+    console.log("disconnected from server");
+});
+
+socket.on("connect_error", (err) => {
+    console.error("Connection error:", err);
+});
 
 
 
