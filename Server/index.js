@@ -9,7 +9,7 @@ const server=http.createServer(app);
 
 const io=new Server(server,{
     cors:{
-        origin:"https://chat-app-iq8n.onrender.com",
+        origin:"http://localhost:3000",
         method:["GET","POST"],
     }
 })
